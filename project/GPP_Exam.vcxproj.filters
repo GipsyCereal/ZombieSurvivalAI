@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Plugin.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="EGraphConnectionTypes.cpp">
+      <Filter>Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="EGraphNodeTypes.cpp">
+      <Filter>Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="EInfluenceMap.cpp">
+      <Filter>DecisionMaking</Filter>
+    </ClCompile>
+    <ClCompile Include="EGeometry2DTypes.cpp" />
+    <ClCompile Include="SteeringBehaviors.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="EBehaviorTree.cpp">
+      <Filter>DecisionMaking</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Plugin.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="EBlackboard.h">
+      <Filter>DecisionMaking</Filter>
+    </ClInclude>
+    <ClInclude Include="EDecisionMaking.h">
+      <Filter>DecisionMaking</Filter>
+    </ClInclude>
+    <ClInclude Include="EGraph2D.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="EGraphConnectionTypes.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="EGraphEnums.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="EGraphNodeTypes.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="EGraphVisuals.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="EGridGraph.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="EIGraph.h">
+      <Filter>Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="EAStar.h">
+      <Filter>Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="EInfluenceMap.h">
+      <Filter>DecisionMaking</Filter>
+    </ClInclude>
+    <ClInclude Include="ERenderingTypes.h" />
+    <ClInclude Include="EGeometry.h" />
+    <ClInclude Include="EGeometry2DTypes.h" />
+    <ClInclude Include="EGeometry2DUtilities.h" />
+    <ClInclude Include="EHeuristicFunctions.h" />
+    <ClInclude Include="ENavigation.h" />
+    <ClInclude Include="EPathSmoothing.h" />
+    <ClInclude Include="SteeringBehaviors.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringHelpers.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="EBehaviorTree.h">
+      <Filter>DecisionMaking</Filter>
+    </ClInclude>
+    <ClInclude Include="Behaviors.h">
+      <Filter>DecisionMaking</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="DecisionMaking">
+      <UniqueIdentifier>{5616804f-8d44-42ef-b49c-7af8510232f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphs">
+      <UniqueIdentifier>{bc7ab7c0-1fdd-4e87-a833-fa94f51405be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pathfinding">
+      <UniqueIdentifier>{775ed593-f7f6-4c9a-9179-91755e392c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SteeringBehaviors">
+      <UniqueIdentifier>{07222b3d-8fc4-437f-8287-c2454d74441a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
