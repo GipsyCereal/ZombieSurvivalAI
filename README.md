@@ -80,7 +80,7 @@ BehaviorState UseItemOfType(Elite::Blackboard* pBlackboard)
 		&& pBlackboard->GetData("WantedType", wantedType) };
 	if (!dataAvailable || !pAgent || !pInterface)
 		return Failure;
-	//Get item of type from inventory and use! Drop if empty
+	//Gets indices of items in inventory
 	std::vector<unsigned char> indices = GetAllInventoryItemsOfType(*pInventory, wantedType);
 
 	for (size_t i{ 0 }; i < indices.size(); i++)
