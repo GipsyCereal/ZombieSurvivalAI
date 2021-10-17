@@ -98,4 +98,4 @@ BehaviorState UseItemOfType(Elite::Blackboard* pBlackboard)
 	return Failure;
 }
 ```
-
+![gif of AI Gameplay](https://github.com/JasperCaerels/ZombieSurvivalAI/blob/master/Media/Gameplay.gif)
