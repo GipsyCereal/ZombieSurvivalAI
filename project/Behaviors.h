@@ -162,7 +162,7 @@ bool IsBitten(Elite::Blackboard* pB)
 {
 	AgentInfo* pAgent{ nullptr };
 	bool turning{};
-	auto dataAvailable{ pB->GetData("Agent", pAgent) && pB->GetData("Turning", turning) };
+	const bool dataAvailable{ pB->GetData("Agent", pAgent) && pB->GetData("Turning", turning) };
 	if (!dataAvailable || !pAgent)
 		return false;
 	if (turning)
@@ -388,22 +388,16 @@ bool IsAimingAtEnemy(Elite::Blackboard* pB)
 {
 	AgentInfo* pAgent{ nullptr };
 	std::vector<EnemyInfo*> pEnemies{};
-	auto dataAvailable{ pB->GetData("Agent", pAgent) && pB->GetData("Enemies", pEnemies) };
+	const bool dataAvailable{ pB->GetData("Agent", pAgent) && pB->GetData("Enemies", pEnemies) };
 	if (!dataAvailable || !pAgent || pEnemies.empty())
 		return false;
 	EnemyInfo* pDangerousEnemy{ GetEnemyByPriority(pAgent, pEnemies) };
 	//Endpoint of the shooting line trace
-	Vector2 A{ pAgent->Position };
-	Vector2 B{ pAgent->Position.x + pAgent->FOV_Range * cosf(pAgent->Orientation), pAgent->Position.y + pAgent->FOV_Range * sinf(pAgent->Orientation) };
+	const Vector2 A{ pAgent->Position };
+	const Vector2 B{ pAgent->Position.x + pAgent->FOV_Range * cosf(pAgent->Orientation), pAgent->Position.y + pAgent->FOV_Range * sinf(pAgent->Orientation) };
 	if( DistanceSquared(B, pDangerousEnemy->Location) < 1)
 		return true;
-	else if(IsLineSphereIntersection(pAgent, pDangerousEnemy))
-	{
-		//sphere intersection
-		return true;
-	}
-	return false;
-
+	return IsLineSphereIntersection(pAgent, pDangerousEnemy);
 }
 //-----------------------------------------------------------------
 
@@ -620,7 +614,7 @@ BehaviorState UseItemOfType(Elite::Blackboard* pBlackboard)
 	IExamInterface* pInterface{ nullptr };
 
 
-	auto dataAvailable{ pBlackboard->GetData("Agent", pAgent)
+	bool dataAvailable{ pBlackboard->GetData("Agent", pAgent)
 		&& pBlackboard->GetData("pInterface", pInterface)
 		&& pBlackboard->GetData("Inventory", pInventory)
 		&& pBlackboard->GetData("WantedType", wantedType) };
@@ -899,9 +893,9 @@ bool IsCloseToCenter(const AgentInfo* pAgent, const std::vector<HouseInfo*>& pHo
 
 bool IsLineSphereIntersection(const AgentInfo* pAgent, const EnemyInfo* pEnemy)
 {
-	Vector2 rayO{ pAgent->Position };
-	Vector2 rayD{ cosf(pAgent->Orientation -  static_cast<float>(M_PI) / 2), sinf(pAgent->Orientation - static_cast<float>(M_PI) / 2)};
-	Vector2 center{pEnemy->Location};
+	const Vector2 rayO{ pAgent->Position };
+	const Vector2 rayD{ cosf(pAgent->Orientation -  static_cast<float>(M_PI) / 2), sinf(pAgent->Orientation - static_cast<float>(M_PI) / 2)};
+	const Vector2 center{pEnemy->Location};
 	float radius{ pEnemy->Size };
 	float radius2{ radius * radius };
 	float a{ Dot(rayD,rayD) };
