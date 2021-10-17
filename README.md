@@ -1,4 +1,7 @@
 # ZombieSurvivalAI
+
+![gif of AI Gameplay](https://github.com/JasperCaerels/ZombieSurvivalAI/blob/master/Media/Gameplay.gif)
+
 A C++ project focussed on making an NPC survive as long as possible in a Zombie hoarded environment by implementing AI Gameplay programming in a custom C++ framework with limited world data.
 
 ## NPC A.I.
@@ -98,4 +101,4 @@ BehaviorState UseItemOfType(Elite::Blackboard* pBlackboard)
 	return Failure;
 }
 ```
-![gif of AI Gameplay](https://github.com/JasperCaerels/ZombieSurvivalAI/blob/master/Media/Gameplay.gif)
+
